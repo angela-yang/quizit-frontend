@@ -17,6 +17,9 @@ function App() {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <main>
+      <Flex>
+        <SideBar />
+      </Flex>
       <IconButton
         aria-label="toggle color"
         icon={colorMode === "light" ? <Moon /> : <Sun />}

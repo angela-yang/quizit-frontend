@@ -15,7 +15,7 @@ function NavItem({ title, icon }) {
       <Menu placement="right">
         <Link>
           <MenuButton>
-            <Flex>
+            <Flex p="2" alignItems="center">
               <Icon as={icon} />
               <Text>{title}</Text>
             </Flex>
