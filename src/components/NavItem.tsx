@@ -11,7 +11,7 @@ import { Flex, Text, Image, Link, Menu, MenuButton } from "@chakra-ui/react";
 function NavItem({ navSize, title, icon, active }) {
   return (
     <Flex
-      mt={13}
+      mt={2}
       flexDir="column"
       w="100%"
       alignItems={navSize == "small" ? "center" : "flex-start"}
@@ -21,7 +21,7 @@ function NavItem({ navSize, title, icon, active }) {
           backgroundColor={active ? "AEC8CA" : "000000"}
           p={3}
           borderRadius={8}
-          _hover={{ textDecor: "none", background: "#AEC8CA" }}
+          _hover={{ textDecor: "none", background: "gray.400" }}
           w={navSize == "large" && "100%"}
         >
           <MenuButton w="100%">

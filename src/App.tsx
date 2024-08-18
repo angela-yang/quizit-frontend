@@ -1,16 +1,10 @@
+import Header from "./components/Header.tsx";
+import SignIn from "./components/SignIn.tsx";
 import SideBar from "./components/SideBar.tsx";
 import Home from "./components/Home.tsx";
-import Footer from "./components/Footer.tsx";
-import React from "react";
-import { Flex, Box } from "@chakra-ui/react";
 import { Moon, Sun } from "react-feather";
-import {
-  Image,
-  useColorMode,
-  IconButton,
-  Heading,
-  Text,
-} from "@chakra-ui/react";
+import { Flex, Image, useColorMode, IconButton } from "@chakra-ui/react";
+import CreateAccount from "./components/CreateAccount.tsx";
 
 function App() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -23,16 +17,11 @@ function App() {
         />
       </Flex>
       <Flex>
-        <Image
-          pos="fixed"
-          top="-5px"
-          left="25px"
-          boxSize="100px"
-          objectFit="contain"
-          src={colorMode === "light" ? "/logo-dark.png" : "/logo-light.png"}
-        />
+        <Header colorMode={colorMode} />
         <SideBar colorMode={colorMode} />
       </Flex>
+      <SignIn />
+      <CreateAccount />
       <IconButton
         aria-label="toggle color"
         icon={colorMode === "light" ? <Moon /> : <Sun />}
@@ -41,20 +30,7 @@ function App() {
         top="1rem"
         onClick={toggleColorMode}
       ></IconButton>
-      <Flex
-        pos="absolute"
-        left="60vh"
-        marginTop="10vh"
-        w="40%"
-        alignContent="center"
-        flexDir="column"
-      >
-        <Heading as="h1">Welcome to Quizit</Heading>
-        <Text sx={{ mt: 3, mb: 3 }}>
-          A study app like quizlet. Create study sets and quizzes and stuff
-          bunga bunga wompus wumpus
-        </Text>
-      </Flex>
+      <Home />
     </main>
   );
 }

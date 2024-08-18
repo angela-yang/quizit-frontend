@@ -1,7 +1,14 @@
-import { Flex, Image, IconButton } from "@chakra-ui/react";
+import {
+  Flex,
+  IconButton,
+  Heading,
+  Text,
+  Divider,
+  Avatar,
+} from "@chakra-ui/react";
 import { useState } from "react";
 import NavItem from "../components/NavItem.tsx";
-import { Menu, Home, Folder, BookOpen, Settings } from "react-feather";
+import { Menu } from "react-feather";
 
 function SideBar({ colorMode }) {
   const [navSize, changeNavSize] = useState("large");
@@ -16,7 +23,11 @@ function SideBar({ colorMode }) {
       rgba(0,0,0,0.05)"
       borderRadius={navSize == "small" ? "15px" : "30px"}
       flexDir="column"
-      backgroundColor="rgba(255, 255, 255, 0.90)"
+      backgroundColor={
+        colorMode === "light"
+          ? "rgba(255, 255, 255, 0.92)"
+          : "rgba(26, 32, 44, 0.92)"
+      }
     >
       <Flex
         flexDir="column"
@@ -26,7 +37,7 @@ function SideBar({ colorMode }) {
         <IconButton
           aria-label="open menu"
           background="none"
-          mt={5}
+          mt={2}
           _hover={{ background: "none" }}
           icon={<Menu />}
           onClick={() => {
@@ -62,6 +73,28 @@ function SideBar({ colorMode }) {
           title="Settings"
           active={false}
         />
+      </Flex>
+      <Flex
+        marginTop="8vh"
+        flexDir="column"
+        w="100%"
+        alignItems={navSize == "small" ? "center" : "flex-start"}
+        mb={4}
+      >
+        <Divider display={navSize == "small" ? "none" : "flex"} />
+        <Flex mt={4} align="center">
+          <Avatar size="sm" src="avater-1.png" />
+          <Flex
+            flexDir="column"
+            ml={4}
+            display={navSize == "small" ? "none" : "flex"}
+          >
+            <Heading as="h3" size="sm">
+              Goober Doober
+            </Heading>
+            <Text color="gray">Admin</Text>
+          </Flex>
+        </Flex>
       </Flex>
     </Flex>
   );
