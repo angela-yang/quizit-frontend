@@ -1,9 +1,26 @@
-import { Flex, Image } from "@chakra-ui/react";
+import { Flex, Image, IconButton } from "@chakra-ui/react";
 import { useState } from "react";
 import NavItem from "../components/NavItem.tsx";
-import { Folder, BookOpen, Settings } from "react-feather";
+import { Menu, Home, Folder, BookOpen, Settings } from "react-feather";
 
-/*
+function SideBar({ colorMode }) {
+  const [navSize, changeNavSize] = useState("large");
+  return (
+    <Flex
+      pos="fixed"
+      left="8"
+      h="95vh"
+      marginTop="20vh"
+      boxShadow="0 4px 12px 0
+      rgba(0,0,0,0.05)"
+      borderRadius={navSize == "small" ? "15px" : "30px"}
+      flexDir="column"
+    >
+      <Flex
+        flexDir="column"
+        alignItems={navSize == "small" ? "center" : "flex-start"}
+        as="nav"
+      >
         <IconButton
           aria-label="open menu"
           background="none"
@@ -14,26 +31,8 @@ import { Folder, BookOpen, Settings } from "react-feather";
             if (navSize == "small") changeNavSize("large");
             else changeNavSize("small");
           }}
-        />*/
-
-function SideBar({ colorMode }) {
-  const [navSize, changeNavSize] = useState("large");
-  return (
-    <Flex
-      pos="fixed"
-      left="8"
-      h="95vh"
-      marginTop="26vh"
-      boxShadow="0 4px 12px 0
-      rgba(0,0,0,0.05)"
-      borderRadius={navSize == "small" ? "15px" : "30px"}
-      flexDir="column"
-    >
-      <Flex
-        flexDir="column"
-        alignItems={navSize == "small" ? "center" : "flex-start"}
-        as="nav"
-      ></Flex>
+        ></IconButton>
+      </Flex>
       <Flex marginTop="2vh" flexDir="column" as="nav">
         <NavItem
           navSize={navSize}

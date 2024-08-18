@@ -2,7 +2,7 @@ import SideBar from "./components/SideBar.tsx";
 import Home from "./components/Home.tsx";
 import Footer from "./components/Footer.tsx";
 import React from "react";
-import { Flex } from "@chakra-ui/react";
+import { Flex, Box } from "@chakra-ui/react";
 import { Moon, Sun } from "react-feather";
 import {
   Image,
@@ -16,10 +16,13 @@ function App() {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <main>
+      <Flex pos="fixed">
+        <Image boxSize="100%" objectFit="cover" src="dark.png" />
+      </Flex>
       <Flex>
         <Image
           pos="fixed"
-          top="0px"
+          top="-5px"
           left="25px"
           boxSize="100px"
           objectFit="contain"
