@@ -16,8 +16,11 @@ function App() {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <main>
-      <Flex pos="fixed">
-        <Image boxSize="100%" objectFit="cover" src="dark.png" />
+      <Flex h="100vh" pos="fixed" display="flex" alignItems="flex-end">
+        <Image
+          objectFit="fill"
+          src={colorMode === "light" ? "/dark.png" : "/light.png"}
+        />
       </Flex>
       <Flex>
         <Image
