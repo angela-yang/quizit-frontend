@@ -7,17 +7,21 @@ function SideBar() {
   const [navSize, changeNavSize] = useState("large");
   return (
     <Flex
-      pos="absolute"
-      left="5"
+      pos="fixed"
+      left="8"
       h="95vh"
-      marginTop="5vh"
+      marginTop="20vh"
       boxShadow="0 4px 12px 0
       rgba(0,0,0,0.05)"
       borderRadius={navSize == "small" ? "15px" : "30px"}
       w={navSize == "small" ? "75px" : "200px"}
       flexDir="column"
     >
-      <Flex p="5%" flexDir="column" alignItems="flex-start" as="nav">
+      <Flex
+        flexDir="column"
+        alignItems={navSize == "small" ? "center" : "flex-start"}
+        as="nav"
+      >
         <IconButton
           aria-label="open menu"
           background="none"
@@ -30,11 +34,11 @@ function SideBar() {
           }}
         />
       </Flex>
-      <Flex marginTop="5vh" flexDir="column" alignItems="flex-start" as="nav">
-        <NavItem icon={Home} title="Dashboard" />
-        <NavItem icon={Folder} title="Study Sets" />
-        <NavItem icon={BookOpen} title="Quizzes" />
-        <NavItem icon={Settings} title="Settings" />
+      <Flex marginTop="2vh" flexDir="column" as="nav">
+        <NavItem navSize icon={Home} title="Dashboard" active={false} />
+        <NavItem navSize icon={Folder} title="Study Sets" active={true} />
+        <NavItem navSize icon={BookOpen} title="Quizzes" active={false} />
+        <NavItem navSize icon={Settings} title="Settings" active={false} />
       </Flex>
     </Flex>
   );

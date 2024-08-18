@@ -5,12 +5,11 @@ import React from "react";
 import { Flex } from "@chakra-ui/react";
 import { Moon, Sun } from "react-feather";
 import {
-  Container,
+  Image,
   useColorMode,
   IconButton,
   Heading,
   Text,
-  Divider,
 } from "@chakra-ui/react";
 
 function App() {
@@ -18,6 +17,20 @@ function App() {
   return (
     <main>
       <Flex>
+        <IconButton
+          aria-label="logo"
+          variant="outline"
+          icon={
+            <Image
+              boxSize="120px"
+              objectFit="contain"
+              src={colorMode === "light" ? "/logo-dark.png" : "/logo-light.png"}
+            />
+          }
+          position="fixed"
+          left="20px"
+          top="20px"
+        ></IconButton>
         <SideBar />
       </Flex>
       <IconButton
@@ -28,14 +41,20 @@ function App() {
         top="1rem"
         onClick={toggleColorMode}
       ></IconButton>
-      <Container>
-        <Heading as="h1">Quizit: Study Site</Heading>
+      <Flex
+        pos="absolute"
+        left="60vh"
+        marginTop="10vh"
+        w="40%"
+        alignContent="center"
+        flexDir="column"
+      >
+        <Heading as="h1">Welcome to Quizit</Heading>
         <Text sx={{ mt: 3, mb: 3 }}>
-          Quiz app like quizlet but free and better (or not better but cool
-          project, and definitely free).
+          A study app like quizlet. Create study sets and quizzes and stuff
+          bunga bunga wompus wumpus
         </Text>
-      </Container>
-      <Divider />
+      </Flex>
     </main>
   );
 }
