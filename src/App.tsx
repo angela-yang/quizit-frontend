@@ -17,21 +17,15 @@ function App() {
   return (
     <main>
       <Flex>
-        <IconButton
-          aria-label="logo"
-          variant="outline"
-          icon={
-            <Image
-              boxSize="120px"
-              objectFit="contain"
-              src={colorMode === "light" ? "/logo-dark.png" : "/logo-light.png"}
-            />
-          }
-          position="fixed"
-          left="20px"
-          top="20px"
-        ></IconButton>
-        <SideBar />
+        <Image
+          pos="fixed"
+          top="0px"
+          left="25px"
+          boxSize="100px"
+          objectFit="contain"
+          src={colorMode === "light" ? "/logo-dark.png" : "/logo-light.png"}
+        />
+        <SideBar colorMode={colorMode} />
       </Flex>
       <IconButton
         aria-label="toggle color"

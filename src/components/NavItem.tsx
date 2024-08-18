@@ -1,14 +1,4 @@
-import {
-  Flex,
-  Spacer,
-  Text,
-  Icon,
-  Link,
-  Menu,
-  MenuButton,
-  MenuList,
-} from "@chakra-ui/react";
-import NavHoverBox from "../components/NavHoverBox.tsx";
+import { Flex, Text, Image, Link, Menu, MenuButton } from "@chakra-ui/react";
 // import { IconProps } from "react-feather";
 
 /*interface Props {
@@ -32,15 +22,10 @@ function NavItem({ navSize, title, icon, active }) {
           p={3}
           borderRadius={8}
           _hover={{ textDecor: "none", background: "AEC8CA" }}
-          w={navSize == "large" && "100%"}
         >
           <MenuButton w="100%">
             <Flex alignItems="center">
-              <Icon
-                as={icon}
-                fontSize="xl"
-                color={active ? "#82AAAD" : "gray.500"}
-              />
+              <Image boxSize="30px" objectFit="contain" src={icon} />
               <Text ml={5} display={navSize == "small" ? "none" : "flex"}>
                 {title}
               </Text>
