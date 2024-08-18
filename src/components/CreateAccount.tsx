@@ -1,6 +1,6 @@
 import CreateAccountForm from "../components/CreateAccountForm.tsx";
 import {
-  Button,
+  Image,
   useDisclosure,
   Modal,
   ModalOverlay,
@@ -12,9 +12,13 @@ function CreateAccount() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <main>
-      <Button pos="fixed" right="12vw" top="1rem" onClick={onOpen}>
-        Create an Account
-      </Button>
+      <Image
+        onClick={onOpen}
+        cursor="pointer"
+        src="/CreateAccount.png"
+        maxHeight="8vh"
+        objectFit="contain"
+      />
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent minWidth="45vw" px={2} borderRadius={10}>

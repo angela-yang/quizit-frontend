@@ -1,6 +1,6 @@
 import LoginForm from "../components/LoginForm.tsx";
 import {
-  Button,
+  Image,
   useDisclosure,
   Modal,
   ModalOverlay,
@@ -12,9 +12,13 @@ function SignIn() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <main>
-      <Button pos="fixed" right="5vw" top="1rem" onClick={onOpen}>
-        Sign In
-      </Button>
+      <Image
+        onClick={onOpen}
+        cursor="pointer"
+        src="/SignIn.png"
+        maxHeight="8vh"
+        objectFit="contain"
+      />
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent minWidth="45vw" px={2} borderRadius={10}>

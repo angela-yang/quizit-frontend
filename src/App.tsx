@@ -20,16 +20,22 @@ function App() {
         <Header colorMode={colorMode} />
         <SideBar colorMode={colorMode} />
       </Flex>
-      <SignIn />
-      <CreateAccount />
-      <IconButton
-        aria-label="toggle color"
-        icon={colorMode === "light" ? <Moon /> : <Sun />}
-        position="fixed"
-        right="1rem"
+      <Flex
+        verticalAlign="middle"
+        justifyContent="space-in-between"
+        pos="fixed"
         top="1rem"
-        onClick={toggleColorMode}
-      ></IconButton>
+        right="1rem"
+      >
+        <CreateAccount />
+        <SignIn />
+        <IconButton
+          ml={2}
+          aria-label="toggle color"
+          icon={colorMode === "light" ? <Moon /> : <Sun />}
+          onClick={toggleColorMode}
+        ></IconButton>
+      </Flex>
       <Home />
     </main>
   );
