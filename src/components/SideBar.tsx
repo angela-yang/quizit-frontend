@@ -8,13 +8,15 @@ function SideBar({ colorMode }) {
   return (
     <Flex
       pos="fixed"
-      left="8"
+      paddingLeft="8"
+      paddingRight="8"
       h="95vh"
       marginTop="20vh"
       boxShadow="0 4px 12px 0
       rgba(0,0,0,0.05)"
       borderRadius={navSize == "small" ? "15px" : "30px"}
       flexDir="column"
+      backgroundColor="rgba(255, 255, 255, 0.90)"
     >
       <Flex
         flexDir="column"

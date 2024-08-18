@@ -21,7 +21,8 @@ function NavItem({ navSize, title, icon, active }) {
           backgroundColor={active ? "AEC8CA" : "000000"}
           p={3}
           borderRadius={8}
-          _hover={{ textDecor: "none", background: "AEC8CA" }}
+          _hover={{ textDecor: "none", background: "#AEC8CA" }}
+          w={navSize == "large" && "100%"}
         >
           <MenuButton w="100%">
             <Flex alignItems="center">
